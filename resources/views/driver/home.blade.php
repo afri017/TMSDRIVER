@@ -1,141 +1,346 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('title', 'Dashboard - Taxido Driver')
 
 @section('content')
-<!-- header start -->
-<header class="section-t-space">
-    <div class="custom-container">
-        <div class="header-panel">
-            <img src="{{ asset('images/logo/driver/driver-logo.png') }}" class="img-fluid logo" alt="logo">
-            <div class="d-flex align-items-center gap-2">
-                <a href="{{ route('notifications') }}">
-                    <i class="iconsax icon-btn" data-icon="notification-2"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- header end -->
+<!-- header starts -->
+    <header id="header" class="main-header">
+        <div class="custom-container">
+            <div class="header-panel">
+                <div class="flex-align-center gap-2">
+                    <a href="#offcanvasLeft" data-bs-toggle="offcanvas">
+                        <i class="iconsax icon-btn" data-icon="text-align-left"> </i>
+                    </a>
+                    <img class="img-fluid logo" src="{{ asset('images/logo/driver/mtiscm.png') }}" alt="logo">
+                </div>
 
-<!-- dashboard section start -->
-<section class="section-b-space">
-    <div class="custom-container">
-        <!-- Earnings Overview -->
-        <div class="earnings-box">
-            <div class="earnings-header">
-                <h3>Your Earnings</h3>
-                <h2 class="fw-bold">$3,100.00</h2>
-            </div>
-            <div class="row mt-3">
-                <div class="col-4">
-                    <div class="stat-box text-center">
-                        <h4 class="fw-bold text-success">16</h4>
-                        <p class="content-color">Complete</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="stat-box text-center">
-                        <h4 class="fw-bold text-warning">02</h4>
-                        <p class="content-color">Pending</p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="stat-box text-center">
-                        <h4 class="fw-bold text-danger">04</h4>
-                        <p class="content-color">Cancelled</p>
-                    </div>
+
+                <div class="flex-align-center gap-sm-3 gap-2">
+                    <a href="notification.html">
+                        <i class="iconsax icon-btn noti-icon" data-icon="bell-2"> </i>
+                    </a>
+
                 </div>
             </div>
         </div>
+    </header>
+    <!-- header end -->
 
-        <!-- Quick Actions -->
-        <div class="mt-4">
-            <h4 class="fw-semibold mb-3">Quick Actions</h4>
-            <div class="row g-3">
-                <div class="col-6">
-                    <a href="{{ route('ride.active') }}" class="btn btn-outline-primary w-100">
-                        <i class="iconsax mb-2" data-icon="car"></i>
-                        <div>Active Rides</div>
+    <!-- earning section starts -->
+    <section>
+        <div class="custom-container">
+            <ul class="total-ride-list mt-0 p-0">
+                <li>
+                    <a href="wallet.html" class="ride-box">
+                        <div class="flex-spacing gap-1">
+                            <h4>$3100</h4>
+                            <div class="ride-icon">
+                                <i class="iconsax icon" data-icon="wallet-open"> </i>
+                            </div>
+                        </div>
+                        <div class="flex-spacing gap-1 mt-1">
+                            <h6 class="d-flex flex-wrap">Total Earnings</h6>
+                            <i class="iconsax arrow-icon" data-icon="arrow-right"> </i>
+                        </div>
                     </a>
-                </div>
-                <div class="col-6">
-                    <a href="{{ route('ride.my') }}" class="btn btn-outline-primary w-100">
-                        <i class="iconsax mb-2" data-icon="clock"></i>
-                        <div>My Rides</div>
+                </li>
+                <li>
+                    <a href="my-rides.html" class="ride-box">
+                        <div class="flex-spacing gap-1">
+                            <h4>16</h4>
+                            <div class="ride-icon">
+                                <i class="iconsax icon" data-icon="smart-car"> </i>
+                            </div>
+                        </div>
+                        <div class="flex-spacing gap-1 mt-1">
+                            <h6 class="d-flex flex-wrap">Complete Ride</h6>
+                            <i class="iconsax arrow-icon" data-icon="arrow-right"> </i>
+                        </div>
                     </a>
-                </div>
-                <div class="col-6">
-                    <a href="{{ route('wallet.index') }}" class="btn btn-outline-success w-100">
-                        <i class="iconsax mb-2" data-icon="wallet"></i>
-                        <div>Wallet</div>
-                    </a>
-                </div>
-                <div class="col-6">
-                    <a href="{{ route('profile.settings') }}" class="btn btn-outline-secondary w-100">
-                        <i class="iconsax mb-2" data-icon="setting"></i>
-                        <div>Settings</div>
-                    </a>
-                </div>
-            </div>
-        </div>
+                </li>
 
-        <!-- PWA Info -->
-        <div class="alert alert-info mt-4">
-            <h5 class="alert-heading">🚀 Laravel 11 + PWA</h5>
-            <p class="mb-0">Aplikasi berhasil dikonversi ke Laravel 11 dengan Progressive Web App support!</p>
-            <hr>
-            <ul class="mb-0">
-                <li>✅ Database schema ready (10 tables)</li>
-                <li>✅ Full routing system (58 routes)</li>
-                <li>✅ PWA enabled (offline support)</li>
-                <li>✅ Service Worker active</li>
+                <li>
+                    <a href="my-rides.html" class="ride-box">
+                        <div class="flex-spacing gap-1">
+                            <h4>02</h4>
+                            <div class="ride-icon">
+                                <i class="iconsax icon" data-icon="car"> </i>
+                            </div>
+                        </div>
+                        <div class="flex-spacing gap-1 mt-1">
+                            <h6 class="d-flex flex-wrap">Pending Ride</h6>
+                            <i class="iconsax arrow-icon" data-icon="arrow-right"> </i>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="my-rides.html" class="ride-box">
+                        <div class="flex-spacing gap-1">
+                            <h4>04</h4>
+                            <div class="ride-icon">
+                                <i class="iconsax icon" data-icon="driving"> </i>
+                            </div>
+                        </div>
+                        <div class="flex-spacing gap-1 mt-1">
+                            <h6 class="d-flex flex-wrap">Cancel Ride</h6>
+                            <i class="iconsax arrow-icon" data-icon="arrow-right"> </i>
+                        </div>
+                    </a>
+                </li>
             </ul>
         </div>
-    </div>
-</section>
-<!-- dashboard section end -->
+    </section>
+    <!-- earning section end -->
 
-<!-- Bottom Navigation -->
-<div class="navbar-menu">
-    <ul>
-        <li class="active">
-            <a href="{{ route('home') }}">
-                <div class="icon">
-                    <i class="iconsax icon" data-icon="home-1"></i>
-                </div>
-                <span class="menu-name">Home</span>
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('ride.active') }}">
-                <div class="icon">
-                    <i class="iconsax icon" data-icon="car"></i>
-                </div>
-                <span class="menu-name">Active Ride</span>
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('ride.my') }}">
-                <div class="icon">
-                    <i class="iconsax icon" data-icon="note"></i>
-                </div>
-                <span class="menu-name">My Rides</span>
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('profile.settings') }}">
-                <div class="icon">
-                    <i class="iconsax icon" data-icon="setting-2"></i>
-                </div>
-                <span class="menu-name">Settings</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- Bottom Navigation end -->
+    <!-- upcoming ride section starts -->
+    <section class="upcoming-ride-section ">
+        <div class="custom-container">
+            <div class="title">
+                <h4>New Upcoming Ride</h4>
+            </div>
+            <ul class="my-ride-list driver-ride-list mt-0">
+                <li>
+                    <div class="my-ride-box">
+                        <div class="my-ride-head">
+                            <a href="accept-ride.html" class="my-ride-img">
+                                <img class="img-fluid profile-img" src="{{ asset('images/profile/p5.png') }}" alt="p5">
+                            </a>
+
+                            <div class="my-ride-content flex-column">
+                                <div class="flex-spacing">
+                                    <a href="accept-ride.html">
+                                        <h5 class="title-color fw-medium">Peter Thornton</h5>
+                                    </a>
+                                    <div class="flex-align-center">
+                                        <div class="flex-align-center gap-1 pe-2">
+                                            <img class="star" src="{{ asset('images/svg/star.svg') }}" alt="star">
+                                            <h5 class="fw-normal title-color p-0">4.8</h5>
+                                        </div>
+                                        <h5 class="fw-mediun theme-color price ps-2 pe-0">$256</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-ride-details">
+                            <div class="ride-info">
+                                <div class="flex-align-center gap-1">
+                                    <img class="icon img-fluid" src="{{ asset('images/svg/location-fill.svg') }}"
+                                        alt="location">
+                                    <h6 class="fw-normal title-color">10 km</h6>
+                                </div>
+                                <h6 class="fw-normal title-color">10 May’25 at 4:10 AM</h6>
+                            </div>
+                            <ul class="ride-location-listing">
+                                <li class="border-0 shadow-none box-background">
+                                    <div class="location-box bg-transparent">
+                                        <img class="icon" src="{{ asset('images/svg/location-fill.svg') }}"
+                                            alt="location">
+                                        <h5 class="fw-light title-color">17, Yonge St, Toronto, Canada</h5>
+                                    </div>
+                                </li>
+
+                                <li class="border-0 shadow-none box-background">
+                                    <div class="location-box bg-transparent">
+                                        <img class="icon" src="{{ asset('images/svg/gps.svg') }}" alt="gps">
+                                        <h5 class="fw-light title-color border-0">20, Avenue St, Toronto, Canada</h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="my-ride-box">
+                        <div class="my-ride-head">
+                            <a href="accept-ride.html" class="my-ride-img">
+                                <img class="img-fluid profile-img" src="{{ asset('images/profile/p6.png') }}" alt="p5">
+                            </a>
+
+                            <div class="my-ride-content flex-column">
+                                <div class="flex-spacing">
+                                    <a href="accept-ride.html">
+                                        <h5 class="title-color fw-medium">Tony Danza</h5>
+                                    </a>
+                                    <div class="flex-align-center">
+                                        <div class="flex-align-center gap-1 pe-2">
+                                            <img class="star" src="{{ asset('images/svg/star.svg') }}" alt="star">
+                                            <h5 class="fw-normal title-color p-0">4.4</h5>
+                                        </div>
+                                        <h5 class="fw-mediun theme-color price ps-2 pe-0">$158</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-ride-details">
+                            <div class="ride-info">
+                                <div class="flex-align-center gap-1">
+                                    <img class="icon img-fluid" src="{{ asset('images/svg/location-fill.svg') }}"
+                                        alt="location">
+                                    <h6 class="fw-normal title-color">8 km</h6>
+                                </div>
+                                <h6 class="fw-normal title-color">15 May’25 at 10:15 AM</h6>
+                            </div>
+                            <ul class="ride-location-listing">
+                                <li class="border-0 shadow-none box-background">
+                                    <div class="location-box bg-transparent">
+                                        <img class="icon" src="{{ asset('images/svg/location-fill.svg') }}"
+                                            alt="location">
+                                        <h5 class="fw-light title-color">10, Avenue St, Toronto, Canada</h5>
+                                    </div>
+                                </li>
+
+                                <li class="border-0 shadow-none box-background">
+                                    <div class="location-box bg-transparent">
+                                        <img class="icon" src="{{ asset('images/svg/gps.svg') }}" alt="gps">
+                                        <h5 class="fw-light title-color border-0">35, Critch Cir, Toronto, Canada
+                                        </h5>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- upcoming ride section end -->
+
+    <!-- active offer section starts -->
+    <section>
+        <div class="custom-container">
+            <div class="title">
+                <h3>Today’s Offer</h3>
+            </div>
+
+
+            <ul class="offer-listing">
+                <li class="w-100">
+                    <div class="offer-box">
+                        <div class="offer-head">
+                            <a href="accept-ride.html" class="profile-part">
+                                <img class=" img-fluid profile-pic" src="{{ asset('images/profile/p5.png') }}" alt="p5">
+                                <h6 class="fw-medium">Johnson Smith</h6>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h6 class="fw-normal title-color">Up to 10 km from Wankover city area <span
+                                    class="fw-semibold">
+                                    (30% OFF) </span>
+                            </h6>
+                            <div class="flex-spacing flex-wrap gap-2 mt-sm-3 mt-2">
+                                <div class="flex-align-center">
+                                    <ul class="ride-info-list">
+                                        <li class="info-content">
+                                            <i class="iconsax icon" data-icon="car"> </i>
+                                            <span>sedan</span>
+                                        </li>
+                                        <li class="info-content">
+                                            <i class="iconsax icon" data-icon="user-1"> </i>
+                                            <span>4 person</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h6 class="validity"> Valid : 20/4/2025</h6>
+                            </div>
+                        </div>
+
+                        <div class="active-part">
+                            <h6 class="fw-normal title-color">Active Status</h6>
+                            <div class="switch-btn">
+                                <input type="checkbox" checked>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="w-100">
+                    <div class="offer-box">
+                        <div class="offer-head">
+                            <a href="accept-ride.html" class=" profile-part">
+                                <img class=" img-fluid profile-pic" src="{{ asset('images/profile/p6.png') }}" alt="p6">
+                                <h6 class="fw-medium">Johnson Smith</h6>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h6 class="fw-normal title-color">Up to 10 km from Wankover city area <span
+                                    class="fw-semibold">
+                                    (20% OFF) </span>
+                            </h6>
+                            <div class="flex-spacing flex-wrap gap-2 mt-sm-3 mt-2">
+                                <div class="flex-align-center">
+                                    <ul class="ride-info-list">
+                                        <li class="info-content">
+                                            <i class="iconsax icon" data-icon="car"> </i>
+                                            <span>sedan</span>
+                                        </li>
+                                        <li class="info-content">
+                                            <i class="iconsax icon" data-icon="user-1"> </i>
+                                            <span>4 person</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h6 class="validity"> Valid : 14/4/2025</h6>
+                            </div>
+                        </div>
+
+                        <div class="active-part">
+                            <h6 class="fw-normal title-color">Active Status</h6>
+                            <div class="switch-btn">
+                                <input type="checkbox" checked>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="w-100">
+                    <div class="offer-box">
+                        <div class="offer-head">
+                            <a href="accept-ride.html" class=" profile-part">
+                                <img class=" img-fluid profile-pic" src="{{ asset('images/profile/p4.png') }}" alt="p4">
+                                <h6 class="fw-medium">Johnson Smith</h6>
+                            </a>
+                        </div>
+
+                        <div class="offer-content">
+                            <h6 class="fw-normal title-color">Up to 10 km from Wankover city area <span
+                                    class="fw-semibold">
+                                    (30% OFF) </span>
+                            </h6>
+                            <div class="flex-spacing flex-wrap gap-2 mt-sm-3 mt-2">
+                                <div class="flex-align-center">
+                                    <ul class="ride-info-list">
+                                        <li class="info-content">
+                                            <i class="iconsax icon" data-icon="car"> </i>
+                                            <span>sedan</span>
+                                        </li>
+                                        <li class="info-content">
+                                            <i class="iconsax icon" data-icon="user-1"> </i>
+                                            <span>4 person</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h6 class="validity"> Valid : 20/4/2025</h6>
+                            </div>
+                        </div>
+
+                        <div class="active-part">
+                            <h6 class="fw-normal title-color">Active Status</h6>
+                            <div class="switch-btn">
+                                <input type="checkbox" checked>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- active offer section end -->
 @endsection
 
 @push('scripts')
-<script src="{{ asset('js/iconsax.js') }}"></script>
 @endpush
