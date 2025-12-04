@@ -1,7 +1,7 @@
 const CACHE_NAME = 'taxido-driver-v1';
 const urlsToCache = [
     '/',
-    '/css/bootstrap.min.css',
+    '/css/vendors/bootstrap.css',
     '/css/style.css',
     '/js/bootstrap.bundle.min.js',
     '/js/jquery-3.6.3.min.js',

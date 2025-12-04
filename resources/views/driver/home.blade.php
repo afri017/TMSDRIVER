@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Dashboard - Taxido Driver')
+@section('title', 'Dashboard - MTI Driver')
 
 @section('content')
 <!-- header starts -->
@@ -340,6 +340,8 @@
         </div>
     </section>
     <!-- active offer section end -->
+
+    
 @endsection
 
 @push('scripts')

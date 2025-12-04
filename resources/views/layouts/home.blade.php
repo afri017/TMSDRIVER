@@ -10,14 +10,14 @@
     <meta name="author" content="taxido">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="../../assets/images/logo/favicon.png" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/logo/favicon.png') }}" type="image/x-icon">
     <title>@yield('title', 'Taxido Driver - Transportation Management System')</title>
-    <link rel="apple-touch-icon" href="../../assets/images/logo/favicon.png">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/favicon.png') }}">
     <meta name="title-color" content="#1F1F1F">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="taxido">
-    <meta name="msapplication-TileImage" content="../../assets/images/logo/favicon.png">
+    <meta name="msapplication-TileImage" content="{{ asset('images/logo/favicon.png') }}">
 
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,29 +29,31 @@
     <meta name="apple-mobile-web-app-title" content="Taxido Driver">
     <meta name="theme-color" content="#199675">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/logo/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/favicon.png') }}">
+    
     <!--Google font-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/GTWalsheimPro.css') }}">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/app-icon/icon-192x192.png') }}">
-
-    <!-- Manifest -->
-    <link rel="manifest" href="{{ route('manifest') }}">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" id="rtl-link" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-
     <!-- Iconsax Icon -->
-    <link rel="stylesheet" href="{{ asset('css/iconsax.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/iconsax.css') }}">
+    
     <!-- Swiper CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/swiper-bundle.min.css') }}">
-
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/swiper-bundle.min.css') }}">
+    
+    <!-- Bootstrap CSS -->
+    <link id="rtl-link"
+      rel="stylesheet"
+      href="{{ asset('css/vendors/bootstrap.css') }}"
+      data-ltr="{{ asset('css/vendors/bootstrap.css') }}"
+      data-rtl="{{ asset('css/vendors/bootstrap.rtl.min.css') }}">
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" id="change-link" type="text/css" href="{{ asset('css/style.css') }}">
-
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="{{ route('manifest') }}">
     @stack('styles')
 </head>
 
@@ -67,8 +69,8 @@
     <!-- bottom navbar start -->
     <div class="navbar-menu">
         <ul>
-            <li class="active">
-                <a href="home.html">
+            <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                <a href="{{ route('home') }}">
                     <div class="icon">
                         <img class="unactive" src="{{ asset('images/svg/home.svg') }}" alt="home">
                         <img class="active" src="{{ asset('images/svg/home-fill.svg') }}" alt="home">
@@ -77,8 +79,8 @@
                 </a>
             </li>
 
-            <li>
-                <a href="active-ride.html">
+            <li class="{{ request()->routeIs('driver.active-ride') ? 'active' : '' }}">
+                <a href="{{ route('driver.active-ride') }}">
                     <div class="icon">
                         <img class="unactive" src="{{ asset('images/svg/driving.svg') }}" alt="driving">
                         <img class="active" src="{{ asset('images/svg/driving-fill.svg') }}" alt="driving">
@@ -87,8 +89,8 @@
                 </a>
             </li>
 
-            <li>
-                <a href="my-rides.html">
+            <li class="{{ request()->routeIs('driver.my-ride') ? 'active' : '' }}">
+                <a href="{{ route('driver.my-ride') }}">
                     <div class="icon">
                         <img class="unactive" src="{{ asset('images/svg/car.svg') }}" alt="car">
                         <img class="active" src="{{ asset('images/svg/car-fill.svg') }}" alt="car">
@@ -97,8 +99,8 @@
                 </a>
             </li>
 
-            <li>
-                <a href="setting.html">
+            <li class="{{ request()->routeIs('driver.setting') ? 'active' : '' }}">
+                <a href="{{ route('driver.setting') }}">
                     <div class="icon">
                         <img class="unactive" src="{{ asset('images/svg/setting.svg') }}" alt="setting">
                         <img class="active" src="{{ asset('images/svg/setting-fill.svg') }}" alt="setting">
@@ -116,6 +118,7 @@
             <div class="sidebar-logo">
                 <img class="img-fluid logo" src="{{ asset('images/logo/driver/driver-logo.png') }}" alt="logo">
                 <img class="img-fluid logo-dark" src="{{ asset('images/logo/driver/driver-logo-dark.png') }}" alt="logo">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
         </div>
         <div class="offcanvas-body">
@@ -231,3 +234,5 @@
 
     @stack('scripts')
 </body>
+
+</html>

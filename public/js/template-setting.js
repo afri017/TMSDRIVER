@@ -14,18 +14,18 @@ dirSwitch?.addEventListener("change", (e) => {
   console.log(checkbox.checked);
   if (checkbox.checked) {
     htmlDom.setAttribute("dir", "rtl");
-    rtlLink.href = "../../assets/css/vendors/bootstrap.rtl.min.css";
+    rtlLink.href = "../css/vendors/bootstrap.rtl.min.css";
     localStorage.setItem(
       "rtlcss",
-      "../../assets/css/vendors/bootstrap.rtl.min.css"
+      "../css/vendors/bootstrap.rtl.min.css"
     );
     localStorage.setItem("dir", "rtl");
   }
 
   if (!checkbox.checked) {
     htmlDom.setAttribute("dir", "ltr");
-    rtlLink.href = "../../assets/css/vendors/bootstrap.css";
-    localStorage.setItem("rtlcss", "../../assets/css/vendors/bootstrap.css");
+    rtlLink.href = "../css/vendors/bootstrap.css";
+    localStorage.setItem("rtlcss", "../css/vendors/bootstrap.css");
     localStorage.setItem("dir", "ltr");
   }
 });
@@ -36,7 +36,7 @@ htmlDom.setAttribute(
 );
 rtlLink.href = localStorage.getItem("rtlcss")
   ? localStorage.getItem("rtlcss")
-  : "../../assets/css/vendors/bootstrap.css";
+  : "../css/vendors/bootstrap.css";
 
 /*====================
   Dark js

@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [DashboardController::class, 'index'])->name('home');
+Route::get('/driver/active-ride', [RideController::class, 'index'])->name('driver.active-ride');
+Route::get('/driver/my-ride', [RideController::class, 'myride'])->name('driver.my-ride');
+Route::get('/driver/setting', [RideController::class, 'setting'])->name('driver.setting');
 
 // ===== PWA ROUTES =====
 Route::get('/manifest.json', function () {
