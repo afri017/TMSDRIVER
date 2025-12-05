@@ -67,7 +67,7 @@
     <!-- panel-space end -->
 
     <!-- bottom navbar start -->
-    <div class="navbar-menu">
+    <div class="navbar-menu" {{ request()->routeIs('login') ? 'Hidden' : '' }}>
         <ul>
             <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
                 <a href="{{ route('home') }}">

@@ -33,7 +33,7 @@
                 <li>
                     <a href="wallet.html" class="ride-box">
                         <div class="flex-spacing gap-1">
-                            <h4>$3100</h4>
+                            <h4>Rp300.000</h4>
                             <div class="ride-icon">
                                 <i class="iconsax icon" data-icon="wallet-open"> </i>
                             </div>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="flex-spacing gap-1 mt-1">
-                            <h6 class="d-flex flex-wrap">Complete Ride</h6>
+                            <h6 class="d-flex flex-wrap">Delivery Complete</h6>
                             <i class="iconsax arrow-icon" data-icon="arrow-right"> </i>
                         </div>
                     </a>
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                         <div class="flex-spacing gap-1 mt-1">
-                            <h6 class="d-flex flex-wrap">Pending Ride</h6>
+                            <h6 class="d-flex flex-wrap">Pending</h6>
                             <i class="iconsax arrow-icon" data-icon="arrow-right"> </i>
                         </div>
                     </a>
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                         <div class="flex-spacing gap-1 mt-1">
-                            <h6 class="d-flex flex-wrap">Cancel Ride</h6>
+                            <h6 class="d-flex flex-wrap">Cancel Order</h6>
                             <i class="iconsax arrow-icon" data-icon="arrow-right"> </i>
                         </div>
                     </a>
@@ -96,7 +96,7 @@
     <section class="upcoming-ride-section ">
         <div class="custom-container">
             <div class="title">
-                <h4>New Upcoming Ride</h4>
+                <h4>Planned Delivery Today’s</h4>
             </div>
             <ul class="my-ride-list driver-ride-list mt-0">
                 <li>
@@ -212,9 +212,8 @@
     <section>
         <div class="custom-container">
             <div class="title">
-                <h3>Today’s Offer</h3>
+                <h3>Truck Available</h3>
             </div>
-
 
             <ul class="offer-listing">
                 <li class="w-100">
@@ -222,7 +221,7 @@
                         <div class="offer-head">
                             <a href="accept-ride.html" class="profile-part">
                                 <img class=" img-fluid profile-pic" src="{{ asset('images/profile/p5.png') }}" alt="p5">
-                                <h6 class="fw-medium">Johnson Smith</h6>
+                                <h6 class="fw-medium">B 9090 UTU</h6>
                             </a>
                         </div>
 
@@ -235,92 +234,12 @@
                                 <div class="flex-align-center">
                                     <ul class="ride-info-list">
                                         <li class="info-content">
-                                            <i class="iconsax icon" data-icon="car"> </i>
-                                            <span>sedan</span>
+                                            <i class="iconsax icon" data-icon="truck"> </i>
+                                            <span>Truck</span>
                                         </li>
                                         <li class="info-content">
-                                            <i class="iconsax icon" data-icon="user-1"> </i>
-                                            <span>4 person</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h6 class="validity"> Valid : 20/4/2025</h6>
-                            </div>
-                        </div>
-
-                        <div class="active-part">
-                            <h6 class="fw-normal title-color">Active Status</h6>
-                            <div class="switch-btn">
-                                <input type="checkbox" checked>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="w-100">
-                    <div class="offer-box">
-                        <div class="offer-head">
-                            <a href="accept-ride.html" class=" profile-part">
-                                <img class=" img-fluid profile-pic" src="{{ asset('images/profile/p6.png') }}" alt="p6">
-                                <h6 class="fw-medium">Johnson Smith</h6>
-                            </a>
-                        </div>
-
-                        <div class="offer-content">
-                            <h6 class="fw-normal title-color">Up to 10 km from Wankover city area <span
-                                    class="fw-semibold">
-                                    (20% OFF) </span>
-                            </h6>
-                            <div class="flex-spacing flex-wrap gap-2 mt-sm-3 mt-2">
-                                <div class="flex-align-center">
-                                    <ul class="ride-info-list">
-                                        <li class="info-content">
-                                            <i class="iconsax icon" data-icon="car"> </i>
-                                            <span>sedan</span>
-                                        </li>
-                                        <li class="info-content">
-                                            <i class="iconsax icon" data-icon="user-1"> </i>
-                                            <span>4 person</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h6 class="validity"> Valid : 14/4/2025</h6>
-                            </div>
-                        </div>
-
-                        <div class="active-part">
-                            <h6 class="fw-normal title-color">Active Status</h6>
-                            <div class="switch-btn">
-                                <input type="checkbox" checked>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-
-                <li class="w-100">
-                    <div class="offer-box">
-                        <div class="offer-head">
-                            <a href="accept-ride.html" class=" profile-part">
-                                <img class=" img-fluid profile-pic" src="{{ asset('images/profile/p4.png') }}" alt="p4">
-                                <h6 class="fw-medium">Johnson Smith</h6>
-                            </a>
-                        </div>
-
-                        <div class="offer-content">
-                            <h6 class="fw-normal title-color">Up to 10 km from Wankover city area <span
-                                    class="fw-semibold">
-                                    (30% OFF) </span>
-                            </h6>
-                            <div class="flex-spacing flex-wrap gap-2 mt-sm-3 mt-2">
-                                <div class="flex-align-center">
-                                    <ul class="ride-info-list">
-                                        <li class="info-content">
-                                            <i class="iconsax icon" data-icon="car"> </i>
-                                            <span>sedan</span>
-                                        </li>
-                                        <li class="info-content">
-                                            <i class="iconsax icon" data-icon="user-1"> </i>
-                                            <span>4 person</span>
+                                            <i class="iconsax icon" data-icon="story"> </i>
+                                            <span>30 Ton</span>
                                         </li>
                                     </ul>
                                 </div>

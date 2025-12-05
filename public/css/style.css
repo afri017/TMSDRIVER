@@ -3208,14 +3208,17 @@ body.dark .main-header .header-panel .logo-dark {
   height: calc(100% - 350px) !important;
 }
 .auth-bg-image-box .auth-bg-image {
-  background-image: url(249a28c7faae05fe0a71.png);
+  /* background-image: url(249a28c7faae05fe0a71.png); */
+  background-image: url(gemini.png);
   width: 100%;
   height: 220px;
   background-position: bottom;
+  /* background-position: upper; */
   background-repeat: repeat-x;
   position: relative;
   z-index: -1;
   background-size: 346px;
+  /* background-size: 600px; */
 }
 body.dark .auth-bg-image-box .auth-bg-image {
   filter: brightness(0.7);
@@ -3292,7 +3295,7 @@ body.dark .auth-bg-image-box .auth-bg-image {
   color: rgba(var(--content-color), 1);
 }
 .auth-content-bg .auth-btn {
-  margin-top: 60px;
+  margin-top: 30px;
 }
 @media (max-width: 600px) {
   .auth-content-bg .auth-btn {

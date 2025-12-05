@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class RideController extends Controller
 {
     //
+    public function login()
+    {
+        return view('driver.login');
+    }
     public function index()
     {
         return view('driver.activeride');
