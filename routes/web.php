@@ -11,7 +11,10 @@ use Illuminate\Support\Facades\Route;
 
 // ===== PUBLIC ROUTES (Guest Only) =====
 
-Route::get('/login', [RideController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 Route::get('/', [DashboardController::class, 'index'])->name('home');
 Route::get('/driver/active-ride', [RideController::class, 'index'])->name('driver.active-ride');
 Route::get('/driver/my-ride', [RideController::class, 'myride'])->name('driver.my-ride');

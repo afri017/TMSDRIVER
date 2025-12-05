@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -20,8 +23,29 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        // TODO: Implement login logic with OTP
-        return redirect()->route('home')->with('success', 'Login successful!');
+        $request->validate([
+            'no_telp' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        // Cari user berdasarkan no_telp
+        $user = User::where('no_telp', $request->no_telp)->first();
+
+        // Cek apakah user ditemukan dan password cocok
+        if ($user && Hash::check($request->password, $user->password)) {
+            // Login user
+            Auth::login($user, $request->filled('remember'));
+
+            // Regenerate session untuk keamanan
+            $request->session()->regenerate();
+
+            return redirect()->intended(route('home'))->with('success', 'Login berhasil!');
+        }
+
+        // Jika gagal, kembali dengan error
+        return back()->withErrors([
+            'no_telp' => 'Nomor telepon atau password salah.',
+        ])->withInput($request->only('no_telp'));
     }
 
     /**
@@ -72,7 +96,11 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        // TODO: Implement logout logic
-        return redirect()->route('login')->with('success', 'Logged out successfully!');
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login')->with('success', 'Logout berhasil!');
     }
 }

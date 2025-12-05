@@ -27,9 +27,25 @@
                     <h6>Hey, You have been missed !</h6>
                 </div>
 
-                <form class="auth-form">
+                <form class="auth-form" method="POST" action="{{ route('login.post') }}">
+                    @csrf
+
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                            @endforeach
+                        </div>
+                    @endif
+
                     <div class="form-group mt-0">
-                        <label class="form-label" for="validationDefault01">Mobile Number</label>
+                        <label class="form-label" for="no_telp">Mobile Number</label>
                         <div class="d-flex gap-2">
                             <div class="dropdown">
                                 <a class="btn dropdown-toggle mt-0" href="#" data-bs-toggle="dropdown">
@@ -41,7 +57,8 @@
                                 </ul>
                             </div>
                             <div class="form-group position-relative mt-0 w-100">
-                                <input type="number" class="form-control" id="validationDefault01"
+                                <input type="text" class="form-control @error('no_telp') is-invalid @enderror"
+                                    id="no_telp" name="no_telp" value="{{ old('no_telp') }}"
                                     placeholder="Enter your number" required>
                                 <i class="iconsax icon" data-icon="phone"></i>
                             </div>
@@ -49,17 +66,18 @@
                     </div>
 
                     <div class="form-group mt-0">
-                        <label class="form-label" for="validationDefault02">Password</label>
+                        <label class="form-label" for="password">Password</label>
                         <div class="d-flex gap-2">
                             <div class="form-group position-relative mt-0 w-100">
-                                <input type="password" class="form-control" id="validationDefault02"
+                                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                    id="password" name="password"
                                     placeholder="Password" required>
                                 <i class="iconsax icon" data-icon="key"></i>
                             </div>
                         </div>
                     </div>
 
-                    <a href="otp.html" class="btn theme-btn w-100 auth-btn">Login</a>
+                    <button type="submit" class="btn theme-btn w-100 auth-btn">Login</button>
                     <!-- <h6 class="content-color fw-normal my-3 text-center"> New User ?
                         <a href="signup.html" class="title-color fw-medium">Sign up</a>
                     </h6> -->
