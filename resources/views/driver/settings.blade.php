@@ -148,14 +148,19 @@
                     </li>
 
                     <li class="w-100">
-                        <a href="#logout" class="setting-box" data-bs-toggle="modal">
-                            <div class="setting-icon">
-                                <i class="iconsax icon" data-icon="logout-2"> </i>
-                            </div>
-                            <div class="setting-content">
-                                <h5 class="error-color">Logout</h5>
-                            </div>
-                        </a>
+                        @auth
+                        <form action="{{ route('logout') }}" method="POST" id="sidebar-logout-form">
+                            @csrf
+                            <a href="#" onclick="event.preventDefault(); document.getElementById('sidebar-logout-form').submit();" class="setting-box" data-bs-toggle="modal">
+                                <div class="setting-icon">
+                                    <i class="iconsax icon" data-icon="logout-2"> </i>
+                                </div>
+                                <div class="setting-content">
+                                    <h5 class="error-color">Logout</h5>
+                                </div>
+                            </a>
+                        </form>
+                        @endauth
                     </li>
                 </ul>
             </div>

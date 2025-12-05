@@ -5,19 +5,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="taxido">
-    <meta name="keywords" content="taxido">
-    <meta name="author" content="taxido">
+    <meta name="description" content="MTI DRIVER">
+    <meta name="keywords" content="MTI DRIVER">
+    <meta name="author" content="MTI DRIVER">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="{{ asset('images/logo/favicon.png') }}" type="image/x-icon">
-    <title>@yield('title', 'Taxido Driver - Transportation Management System')</title>
-    <link rel="apple-touch-icon" href="{{ asset('images/logo/favicon.png') }}">
+    <link rel="icon" href="{{ asset('images/logo/favicon.ico') }}" type="image/x-icon">
+    <title>@yield('title', 'MTI DRIVER - Transportation Management System')</title>
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/favicon.ico') }}">
     <meta name="title-color" content="#1F1F1F">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="taxido">
-    <meta name="msapplication-TileImage" content="{{ asset('images/logo/favicon.png') }}">
+    <meta name="apple-mobile-web-app-title" content="MTI DRIVER">
+    <meta name="msapplication-TileImage" content="{{ asset('images/logo/favicon.ico') }}">
 
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,12 +26,12 @@
     <!-- PWA Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Taxido Driver">
+    <meta name="apple-mobile-web-app-title" content="MTI Driver">
     <meta name="theme-color" content="#199675">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('images/logo/favicon.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('images/logo/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('images/logo/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/logo/favicon.ico') }}">
     
     <!--Google font-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/GTWalsheimPro.css') }}">
@@ -193,10 +193,15 @@
             </ul>
 
             <div class="bottom-sidebar">
-                <a href="login.html" class="pages">
-                    <i class="iconsax sidebar-icon" data-icon="logout-2"> </i>
-                    <h3>Logout</h3>
-                </a>
+                @auth
+                <form action="{{ route('logout') }}" method="POST" id="sidebar-logout-form">
+                    @csrf
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('sidebar-logout-form').submit();" class="pages">
+                        <i class="iconsax sidebar-icon" data-icon="logout-2"> </i>
+                        <h3>Logout</h3>
+                    </a>
+                </form>
+                @endauth
             </div>
         </div>
     </div>

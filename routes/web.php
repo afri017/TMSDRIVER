@@ -10,15 +10,20 @@ use App\Http\Controllers\Wallet\WalletController;
 use Illuminate\Support\Facades\Route;
 
 // ===== PUBLIC ROUTES (Guest Only) =====
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+});
 
-Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+// ===== PROTECTED ROUTES (Require Authentication) =====
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/', [DashboardController::class, 'index'])->name('home');
-Route::get('/driver/active-ride', [RideController::class, 'index'])->name('driver.active-ride');
-Route::get('/driver/my-ride', [RideController::class, 'myride'])->name('driver.my-ride');
-Route::get('/driver/setting', [RideController::class, 'setting'])->name('driver.setting');
+    Route::get('/', [DashboardController::class, 'index'])->name('home');
+    Route::get('/driver/active-ride', [RideController::class, 'index'])->name('driver.active-ride');
+    Route::get('/driver/my-ride', [RideController::class, 'myride'])->name('driver.my-ride');
+    Route::get('/driver/setting', [RideController::class, 'setting'])->name('driver.setting');
+});
 
 // ===== PWA ROUTES =====
 Route::get('/manifest.json', function () {
