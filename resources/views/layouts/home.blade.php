@@ -118,14 +118,14 @@
             <div class="sidebar-logo">
                 <img class="img-fluid logo" src="{{ asset('images/logo/driver/driver-logo.png') }}" alt="logo">
                 <img class="img-fluid logo-dark" src="{{ asset('images/logo/driver/driver-logo-dark.png') }}" alt="logo">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
             </div>
         </div>
         <div class="offcanvas-body">
             <a href="profile-setting.html" class="profile-part flex-align-center gap-2">
-                <img class="img-fluid profile-pic" src="{{ asset('images/profile/p8.png') }}" alt="p8">
+                <img class="img-fluid profile-pic" src="{{ asset('images/profile/' . Auth::user()->gambar) }}" alt="p8">
                 <div>
-                    <h3>Jonathan Higgins</h3>
+                    <h3>{{ Auth::user()->name }}</h3>
                     <span>Edit Account</span>
                 </div>
             </a>

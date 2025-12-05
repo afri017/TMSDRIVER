@@ -46,7 +46,8 @@
 /* font family */
 /* color variables */
 :root {
-  --theme-color: 25, 150, 117;
+  --theme-color: 29, 155, 171;
+  /* --theme-color: 25, 150, 117; */
   --title-color: 31, 31, 31;
   --content-color: 143, 143, 143;
   --box-bg: 245, 245, 245;
